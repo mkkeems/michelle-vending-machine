@@ -120,8 +120,9 @@ src/
 
 ## AI Usage Disclosure
 
-AI assistance (ChatGPT) was used during development for:
+AI assistance (ChatGPT + GitHub Copilot) was used during development for:
 
-- Defining and refining display messages for reducer actions.
-- Suggesting component styling rules (e.g., Tailwind button variants).
-- Polishing README structure and language.
+- Helped refine display messages for reducer actions and edge cases
+- Suggested styling patterns (e.g., Tailwind button variants).
+- Assisted in structuring and polishing the README.
+- GitHub Copilot (VS Code) provided inline suggestions and quick reviews to speed up repetitive boilerplate and improve code ergonomics.
