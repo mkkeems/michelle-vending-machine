@@ -148,7 +148,7 @@ export const vendingMachineReducer = (
         ...state,
         displayMessage: MESSAGES.RETURN_CHANGE(state.balance),
         balance: 0,
-        paymentMethod: undefined,
+        status: "PROCESSING",
       };
     }
     case "OUT_OF_STOCK":

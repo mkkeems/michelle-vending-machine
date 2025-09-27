@@ -4,7 +4,12 @@ import { PaymentButton } from "./PaymentButton";
 export const CardControls = () => {
   const { state, payWithCard, cardAuthSuccess, cardAuthFail, cancel } =
     useVendingMachine();
-  const { isProcessingCardPayment, paymentMethod } = state;
+  const { isProcessingCardPayment, cardLimit, paymentMethod, status } = state;
+
+  const isCardButtonDisabled =
+    paymentMethod === "CASH" ||
+    !!isProcessingCardPayment ||
+    (status !== "ACTIVE" && status !== "IDLE");
 
   const handlePayWithCard = () => {
     payWithCard();
@@ -17,11 +22,11 @@ export const CardControls = () => {
       } else {
         cardAuthFail();
       }
-    }, 1000); // 1s delay to feel realistic
+    }, 1000);
   };
 
   const handleCancel = () => {
-    cancel(); // cancel immediately
+    cancel();
   };
 
   return (
@@ -31,12 +36,12 @@ export const CardControls = () => {
         <PaymentButton
           label="Pay with Card"
           onClick={handlePayWithCard}
-          disabled={isProcessingCardPayment || paymentMethod === "CASH"}
+          disabled={isCardButtonDisabled}
         />
         <PaymentButton
           label="Cancel"
           onClick={handleCancel}
-          disabled={isProcessingCardPayment || paymentMethod !== "CARD"}
+          disabled={isCardButtonDisabled || !cardLimit}
           variant="red"
         />
       </div>

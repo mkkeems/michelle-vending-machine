@@ -3,7 +3,7 @@ import type { AvailableDrinks, VendingMachineAction } from "@/types";
 import { VendingMachineContext } from "./VendingMachine.context";
 import { vendingMachineReducer, initialState } from "./VendingMachine.reducer";
 
-const AUTO_RESET_DELAY = 3000;
+const AUTO_RESET_DELAY = 2000;
 
 export const VendingMachineProvider = ({
   children,
