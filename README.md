@@ -2,7 +2,7 @@
 
 A vending machine simulation built with **React + TypeScript** that models real-world user interactions, **cash** and **card** payment flows, and error handling.
 
----
+👉 [**Live Demo**](https://michelle-vending-machine.vercel.app/)
 
 ## Features
 
